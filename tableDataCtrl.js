@@ -37,40 +37,40 @@ app.controller('tableDataCtrl', ['$scope', '$http', 'orderByFilter', '$timeout',
       $scope.rentData = orderBy($scope.json, $scope.propertyName, $scope.reverse);
     };
     $scope.toggleId = function(){
-      $scope.id = $scope.id === true ? false : true;
+      $scope.id = $scope.id ? false : true;
     }
     $scope.toggleLocationCode = function(){
-      $scope.locationCode = $scope.locationCode === true ? false : true;
+      $scope.locationCode = $scope.locationCode ? false : true;
     }
     $scope.toggleCity = function(){
-      $scope.city = $scope.city === true ? false : true;
+      $scope.city = $scope.city ? false : true;
     }
     $scope.toggleStreet = function(){
-      $scope.street = $scope.street === true ? false : true;
+      $scope.street = $scope.street ? false : true;
     }
     $scope.togglesPresentCars = function(){
-      $scope.sPresentCars = $scope.sPresentCars === true ? false : true;
+      $scope.sPresentCars = $scope.sPresentCars ? false : true;
     }
     $scope.togglesRequiredCars = function(){
-      $scope.sRequiredCars = $scope.sRequiredCars === true ? false : true;
+      $scope.sRequiredCars = $scope.sRequiredCars ? false : true;
     }
     $scope.togglemePresentCars = function(){
-      $scope.mePresentCars = $scope.mePresentCars === true ? false : true;
+      $scope.mePresentCars = $scope.mePresentCars ? false : true;
     }
     $scope.togglemeRequiredCars = function(){
-      $scope.meRequiredCars = $scope.meRequiredCars === true ? false : true;
+      $scope.meRequiredCars = $scope.meRequiredCars ? false : true;
     }
     $scope.togglelPresentCars = function(){
-      $scope.lPresentCars = $scope.lPresentCars === true ? false : true;
+      $scope.lPresentCars = $scope.lPresentCars ? false : true;
     }
     $scope.togglelRequiredCars = function(){
-      $scope.lRequiredCars = $scope.lRequiredCars === true ? false : true;
+      $scope.lRequiredCars = $scope.lRequiredCars ? false : true;
     }
     $scope.togglemexxxlPresentCars = function(){
-      $scope.xxxlPresentCars = $scope.xxxlPresentCars === true ? false : true;
+      $scope.xxxlPresentCars = $scope.xxxlPresentCars ? false : true;
     }
     $scope.togglexxxlRequiredCars = function(){
-      $scope.xxxlRequiredCars = $scope.xxxlRequiredCars === true ? false : true;
+      $scope.xxxlRequiredCars = $scope.xxxlRequiredCars ? false : true;
     }
 
     $('.export').on('click', function(e){
