@@ -28,7 +28,7 @@ app.controller('tableDataCtrl', ['$scope', '$http', 'orderByFilter', '$timeout',
 
     $timeout(function(){
       $scope.rentData = orderBy($scope.json, $scope.propertyName, $scope.reverse);
-    }, 100);
+    }, 500);
 
     $scope.sortBy = function(propertyName) {
       $scope.reverse = (propertyName !== null && $scope.propertyName === propertyName)
