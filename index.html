@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Rent Car Table</title>
+    <link rel="stylesheet" href="App2drive.css">
+  </head>
+  <body ng-controller="tableDataCtrl" ng-cloak>
+    <hr/>
+    <div class="buttons">
+      <span>
+        <input type="text" class="form-control" placeholder="Search Renting Data" ng-model="searchCar">
+        <button class="unSort" ng-click="sortBy(null)">Set to Unsorted</button>
+      </span>
+      <button class="export">Export to Excel</button>
+    </div>
+    <hr/>
+    <table class="tableButton">
+      <tr>
+        <th>
+          <button ng-click="toggleId()" ng-class="{'active': !id}">Id</button>
+        </th>
+        <th>
+          <button ng-click="toggleLocationCode()" ng-class="{'active': !locationCode}">Location Code</button>
+        </th>
+        <th>
+          <button ng-click="toggleCity()" ng-class="{'active': !city}">City</button>
+        </th>
+        <th>
+          <button ng-click="toggleStreet()" ng-class="{'active': !street}">Street</button>
+        </th>
+        <th>
+          <button ng-click="togglesPresentCars()" ng-class="{'active': !sPresentCars}">sPresentCars</button>
+        </th>
+        <th>
+          <button ng-click="togglesRequiredCars()" ng-class="{'active': !sRequiredCars}">sRequiredCars</button>
+        </th>
+        <th>
+          <button ng-click="togglemePresentCars()" ng-class="{'active': !mePresentCars}">mePresentCars</button>
+        </th>
+        <th>
+          <button ng-click="togglemeRequiredCars()" ng-class="{'active': !meRequiredCars}">meRequiredCars</button>
+        </th>
+        <th>
+          <button ng-click="togglelPresentCars()" ng-class="{'active': !lPresentCars}">lPresentCars</button>
+        </th>
+        <th>
+          <button ng-click="togglelRequiredCars()" ng-class="{'active': !lRequiredCars}">lRequiredCars</button>
+        </th>
+        <th>
+          <button ng-click="togglemexxxlPresentCars()" ng-class="{'active': !xxxlPresentCars}">xxxlPresentCars</button>
+        </th>
+        <th>
+          <button ng-click="togglexxxlRequiredCars()" ng-class="{'active': !xxxlRequiredCars}">xxxlRequiredCars</button>
+        </th>
+      </tr>
+    </table>
+    <div class="container">
+      <table class="tableClass" >
+        <tr>
+          <th ng-if="id">
+            <span ng-click="sortBy('id')">Id</span>
+            <span class="sortorder" ng-show="propertyName === 'id'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="locationCode">
+            <span ng-click="sortBy('locationCode')">LocationCode</span>
+            <span class="sortorder" ng-show="propertyName === 'locationCode'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="city">
+            <span ng-click="sortBy('city')">City</span>
+            <span class="sortorder" ng-show="propertyName === 'city'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="street">
+            <span ng-click="sortBy('street')">Street</span>
+            <span class="sortorder" ng-show="propertyName === 'street'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="sPresentCars">
+            <span ng-click="sortBy('sPresentCars')">sPresentCars</span>
+            <span class="sortorder" ng-show="propertyName === 'sPresentCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="sRequiredCars">
+            <span ng-click="sortBy('sRequiredCars')">sRequiredCars</span>
+            <span class="sortorder" ng-show="propertyName === 'sRequiredCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="mePresentCars">
+            <span ng-click="sortBy('mePresentCars')">mePresentCars</span>
+            <span class="sortorder" ng-show="propertyName === 'mePresentCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="meRequiredCars">
+            <span ng-click="sortBy('meRequiredCars')">meRequiredCars</span>
+            <span class="sortorder" ng-show="propertyName === 'meRequiredCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="lPresentCars">
+            <span ng-click="sortBy('lPresentCars')">lPresentCars</span>
+            <span class="sortorder" ng-show="propertyName === 'lPresentCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="lRequiredCars">
+            <span ng-click="sortBy('lRequiredCars')">lRequiredCars</span>
+            <span class="sortorder" ng-show="propertyName === 'lRequiredCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="xxxlPresentCars">
+            <span ng-click="sortBy('xxxlPresentCars')">xxxlPresentCars</span>
+            <span class="sortorder" ng-show="propertyName === 'xxxlPresentCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th ng-if="xxxlRequiredCars">
+            <span ng-click="sortBy('xxxlRequiredCars')">xxxlRequiredCars</span>
+            <span class="sortorder" ng-show="propertyName === 'xxxlRequiredCars'" ng-class="{reverse: reverse}"></span>
+          </th>
+        </tr>
+        <tr ng-repeat="current in rentData | filter:searchCar">
+          <td ng-if="id">{{current.id}}</td>
+          <td ng-if="locationCode">{{current.locationCode}}</td>
+          <td ng-if="city">{{current.city}}</td>
+          <td ng-if="street">{{current.street}}</td>
+          <td ng-if="sPresentCars">{{current.sPresentCars}}</td>
+          <td ng-if="sRequiredCars">{{current.sRequiredCars}}</td>
+          <td ng-if="mePresentCars">{{current.mePresentCars}}</td>
+          <td ng-if="meRequiredCars">{{current.meRequiredCars}}</td>
+          <td ng-if="lPresentCars">{{current.lPresentCars}}</td>
+          <td ng-if="lRequiredCars">{{current.lRequiredCars}}</td>
+          <td ng-if="xxxlPresentCars">{{current.xxxlPresentCars}}</td>
+          <td ng-if="xxxlRequiredCars">{{current.xxxlRequiredCars}}</td>
+        </tr>
+      </table>
+    </div>
+    <hr/>
+    <script src="libs/jquery-3.2.1.min.js"></script>
+    <script src="libs/jquery.table2excel.js"></script>
+    <script src="libs/angular(1.5.6).min.js"></script>
+    <script src="tableDataCtrl.js"></script>
+  </body>
+</html>

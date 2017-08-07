@@ -1,0 +1,59 @@
+body{
+  color: #039;
+  background: #bbc4ef;
+}
+input{
+  background: #fccdd3;
+}
+span, td, th{
+  font-size: 10px;
+}
+button{
+  margin-left: 10px;
+  font-size: 11px;
+  background: #fccdd3;
+}
+hr{
+   display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #6534ff;
+    margin: 1em 0;
+    padding: 0;
+}
+.tableClass {
+  border-collapse: collapse;
+  background: #b9c9fe;
+  width: 100%;
+}
+.tableButton {
+  width: 100%;
+}
+.tableClass th {
+  border-bottom: 1px solid;
+}
+.tableClass td, .tableClass th {
+  padding: 5px 10px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.active {
+  background: #eee;
+  color: #aaa;
+}
+.export {
+  background: #009900;
+  color: #fff;
+  justify-content:space-evenly;
+}
+.unSort{
+  background: #bbc4ef;
+}
+.sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
