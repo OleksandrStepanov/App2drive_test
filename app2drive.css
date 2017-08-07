@@ -7,7 +7,6 @@ input{
 }
 span, td, th{
   font-size: 10px;
-  text-align: center;
 }
 button{
   margin-left: 10px;
@@ -15,12 +14,15 @@ button{
   background: #fccdd3;
 }
 hr{
-   display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #6534ff;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #6534ff;
+  margin: 1em 0;
+  padding: 0;
+}
+.center{
+  text-align: center;
 }
 .tableClass {
   border-collapse: collapse;
